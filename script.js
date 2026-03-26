@@ -336,7 +336,7 @@ setActiveButton(currentIndex, practiceButtons);
 
   if (total === 0) return;
 
-  const GAP_PX = 24; // must match .team-track gap
+  const GAP_PX = 20; // must match .team-track gap
   const CARDS_PER_VIEW_DESKTOP = 4;
   const CARDS_PER_VIEW_TABLET = 2;
   const CARDS_PER_VIEW_MOBILE = 1;
