@@ -45,8 +45,9 @@ const nextBtn = document.getElementById('nextBtn');
 const cards = Array.from(document.querySelectorAll('.carousel-card'));
 let currentIndex = 2; // Start with middle card active
 
-const STEP_X = 170; // Horizontal spacing between visible cards
+const STEP_X = 280; // Horizontal spacing between visible cards
 const MAX_VISIBLE_DISTANCE = 2; // Distance from center (-2..2) that stays visible
+const ROTATE_Y = 35; // 3D rotation angle for side cards
 
 function getSignedDistance(i, centerIndex, n) {
   // Shortest signed distance around a circular list
@@ -66,22 +67,30 @@ function applyPosition(card, dist, animate = true) {
   const canShow = absd <= MAX_VISIBLE_DISTANCE;
 
   const x = dist * STEP_X;
-  const scale = absd === 0 ? 1 : absd === 1 ? 0.85 : 0.7;
-  const opacity = absd === 0 ? 1 : absd === 1 ? 0.82 : 0.4;
+  const rotY = dist < 0 ? ROTATE_Y : dist > 0 ? -ROTATE_Y : 0;
+  const tz = absd === 0 ? 0 : -80; // push side cards back in Z
+  const scale = absd === 0 ? 1 : absd === 1 ? 0.95 : 1.05;
   const z = absd === 0 ? 3 : absd === 1 ? 2 : 1;
 
   card.style.transition = animate
-    ? 'transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.45s ease, box-shadow 0.45s ease'
+    ? 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.5s ease, box-shadow 0.5s ease'
     : 'none';
 
-  card.style.transform = `translate(-50%, -50%) translateX(${x}px) scale(${scale})`;
-  card.style.opacity = canShow ? opacity : 0;
+  card.style.transform = `translate(-50%, -50%) translateX(${x}px) translateZ(${tz}px) rotateY(${rotY}deg) scale(${scale})`;
+  card.style.opacity = canShow ? 1 : 0;
   card.style.zIndex = canShow ? z : 0;
   card.style.boxShadow = canShow
     ? (absd === 0
-      ? '0 40px 90px rgba(0,0,0,0.30)'
-      : '0 24px 50px rgba(0,0,0,0.15)')
+      ? '0 20px 50px rgba(0,0,0,0.18)'
+      : '0 10px 30px rgba(0,0,0,0.10)')
     : 'none';
+
+  // Only center card shows overlay
+  if (absd === 0) {
+    card.classList.add('active-card');
+  } else {
+    card.classList.remove('active-card');
+  }
 
   // Avoid hidden cards blocking clicks
   card.style.pointerEvents = canShow ? 'auto' : 'none';
