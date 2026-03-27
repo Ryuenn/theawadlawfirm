@@ -7,6 +7,7 @@ const youtubePlayer = document.getElementById('youtubePlayer');
 // Replace with your YouTube video ID
 const YOUTUBE_VIDEO_ID = 'JyZ_4v8df8A'; // Origin Story Video
 
+if (playBtn && videoModal && closeBtn && youtubePlayer) {
 playBtn.addEventListener('click', () => {
   // Set the YouTube URL with the video ID
   youtubePlayer.src = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1`;
@@ -37,15 +38,18 @@ document.addEventListener('keydown', (e) => {
     document.body.style.overflow = 'auto';
   }
 });
+} // end video modal
 
 /* CAROUSEL SCRIPT */
 const carousel = document.getElementById('carousel');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
+const cprevBtn = document.getElementById('prevBtn');
+const cnextBtn = document.getElementById('nextBtn');
 const cards = Array.from(document.querySelectorAll('.carousel-card'));
-let currentIndex = 2; // Start with middle card active
 
-const STEP_X = 280; // Horizontal spacing between visible cards
+if (carousel && cprevBtn && cnextBtn && cards.length) {
+let currentIndex = 0; // Start with Car Accidents card active
+
+const STEP_X = 240; // Horizontal spacing between visible cards
 const MAX_VISIBLE_DISTANCE = 2; // Distance from center (-2..2) that stays visible
 const ROTATE_Y = 35; // 3D rotation angle for side cards
 
@@ -66,10 +70,12 @@ function applyPosition(card, dist, animate = true) {
   const absd = Math.abs(dist);
   const canShow = absd <= MAX_VISIBLE_DISTANCE;
 
-  const x = dist * STEP_X;
-  const rotY = dist < 0 ? ROTATE_Y : dist > 0 ? -ROTATE_Y : 0;
-  const tz = absd === 0 ? 0 : -80; // push side cards back in Z
-  const scale = absd === 0 ? 1 : absd === 1 ? 0.95 : 1.05;
+  const stepForDist = absd === 1 ? 260 : STEP_X;
+  const x = (dist === 0) ? 0 : (dist > 0 ? 1 : -1) * (absd === 1 ? 260 : 520);
+  const baseRotY = absd === 0 ? 0 : absd === 1 ? ROTATE_Y : ROTATE_Y + 20;
+  const rotY = dist < 0 ? baseRotY : dist > 0 ? -baseRotY : 0;
+  const tz = absd === 0 ? 0 : absd === 1 ? -80 : -40;
+  const scale = absd === 0 ? 1 : absd === 1 ? 0.95 : 1.15;
   const z = absd === 0 ? 3 : absd === 1 ? 2 : 1;
 
   card.style.transition = animate
@@ -104,7 +110,7 @@ function updateCarousel() {
   });
 }
 
-prevBtn.addEventListener('click', () => {
+cprevBtn.addEventListener('click', () => {
   currentIndex = (currentIndex - 1 + cards.length) % cards.length;
   updateCarousel();
   // Sync active tab
@@ -114,7 +120,7 @@ prevBtn.addEventListener('click', () => {
   });
 });
 
-nextBtn.addEventListener('click', () => {
+cnextBtn.addEventListener('click', () => {
   currentIndex = (currentIndex + 1) % cards.length;
   updateCarousel();
   // Sync active tab
@@ -136,12 +142,22 @@ practiceButtons.forEach((btn, i) => {
 
 // Clicking a card selects the matching tab + recenters it
 cards.forEach((card, i) => {
-  card.addEventListener('click', () => {
+  card.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (card.dataset.href) {
+      window.location.href = card.dataset.href;
+      return;
+    }
     currentIndex = i;
     setActiveButton(currentIndex, practiceButtons);
     updateCarousel();
   });
 });
+
+// Initialize
+updateCarousel();
+setActiveButton(currentIndex, practiceButtons);
+} // end carousel if
 
 /* ══════════════════════════════════════
    CASE STUDIES — Carousel + Scroll Animation
@@ -300,10 +316,6 @@ cards.forEach((card, i) => {
   goTo(0);
   initScrollAnimation();
 })();
-
-// Initialize
-updateCarousel();
-setActiveButton(currentIndex, practiceButtons);
 
 /* ══════════════════════════════════════
    FAQ Accordion
@@ -476,6 +488,47 @@ if (document.readyState === 'loading') {
 } else {
   console.log('FAQ: DOM already loaded, initializing immediately');
   initFAQAccordion();
+}
+
+/* ─────────────────────────────────────────────
+   Contact Page Animations
+   ───────────────────────────────────────────── */
+(function() {
+  function initCPAnimations() {
+    var cpEls = document.querySelectorAll('.cp-animate');
+    if (!cpEls.length) return;
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          var delay = parseInt(el.getAttribute('data-delay') || '0', 10);
+          setTimeout(function() {
+            el.classList.add('cp-visible');
+          }, delay);
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '50px' });
+
+    cpEls.forEach(function(el) { observer.observe(el); });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCPAnimations);
+  } else {
+    initCPAnimations();
+  }
+})();
+
+function handleContactSubmit(form) {
+  var btn = form.querySelector('.cp-form-submit');
+  if (!btn || btn.classList.contains('cp-submitted')) return;
+  btn.classList.add('cp-submitted');
+  setTimeout(function() {
+    btn.classList.remove('cp-submitted');
+    form.reset();
+  }, 2500);
 }
 
 
