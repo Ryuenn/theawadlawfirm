@@ -121,7 +121,7 @@ text-decoration: none;
   margin-top: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(5, auto);
+  grid-template-rows: repeat(4, auto);
   grid-auto-flow: column;
 }
 
