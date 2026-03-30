@@ -491,6 +491,70 @@ if (document.readyState === 'loading') {
 }
 
 /* ─────────────────────────────────────────────
+   YouTube Video Modal
+   ───────────────────────────────────────────── */
+(function() {
+  function initYTModal() {
+    var backdrop = document.getElementById('ytModalBackdrop');
+    var iframe   = document.getElementById('ytModalIframe');
+    var closeBtn = document.getElementById('ytModalClose');
+    if (!backdrop || !iframe) return;
+
+    function openModal(ytId) {
+      iframe.src = 'https://www.youtube.com/embed/' + ytId + '?autoplay=1&rel=0';
+      backdrop.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      backdrop.classList.remove('active');
+      iframe.src = '';
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.cs-video-card').forEach(function(card) {
+      var ytId = card.getAttribute('data-yt');
+      if (ytId && ytId !== '' && !ytId.startsWith('YOUTUBE_ID')) {
+        var img = card.querySelector('img');
+        if (img) {
+          var originalSrc = img.src;
+          var sizes = ['maxresdefault', 'sddefault', 'hqdefault', 'mqdefault'];
+          var sizeIdx = 0;
+          (function tryNext() {
+            if (sizeIdx >= sizes.length) { img.src = originalSrc; return; }
+            var t = new Image();
+            t.onload = function() {
+              if (t.naturalWidth > 120) { img.src = t.src; }
+              else { sizeIdx++; tryNext(); }
+            };
+            t.onerror = function() { sizeIdx++; tryNext(); };
+            t.src = 'https://img.youtube.com/vi/' + ytId + '/' + sizes[sizeIdx++] + '.jpg';
+          })();
+        }
+      }
+      card.addEventListener('click', function() {
+        var ytId = card.getAttribute('data-yt');
+        if (ytId && ytId !== '' && !ytId.startsWith('YOUTUBE_ID')) openModal(ytId);
+      });
+    });
+
+    closeBtn && closeBtn.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', function(e) {
+      if (e.target === backdrop) closeModal();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeModal();
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initYTModal);
+  } else {
+    initYTModal();
+  }
+})();
+
+/* ─────────────────────────────────────────────
    Contact Page Animations
    ───────────────────────────────────────────── */
 (function() {
