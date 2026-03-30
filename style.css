@@ -5225,3 +5225,336 @@ object-fit:contain;
     padding: 100px 0 60px;
   }
 }
+
+/* ═══════════════════════════════════════════════
+   HAMBURGER + MOBILE NAV
+   ═══════════════════════════════════════════════ */
+
+/* Hamburger button – hidden on desktop */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1100;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.nav-hamburger span {
+  width: 22px;
+  height: 2px;
+  background: #1b1f24;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Mobile breakpoint ── */
+@media (max-width: 900px) {
+
+  /* Navbar */
+  .navbar {
+    padding: 14px 20px;
+    position: relative;
+    z-index: 1000;
+  }
+
+  /* Hide desktop nav & icons */
+  .navbar > nav,
+  .navbar .nav-icons {
+    display: none !important;
+  }
+
+  /* Show hamburger */
+  .nav-hamburger {
+    display: flex;
+  }
+
+  /* Logo size */
+  .logo img {
+    height: 54px;
+  }
+
+  /* ── Open state: slide-down nav panel ── */
+  .navbar.nav-open > nav {
+    display: flex !important;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    z-index: 1050;
+    padding: 90px 28px 40px;
+    gap: 0;
+    overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    animation: mobileNavIn 0.28s cubic-bezier(0.4, 0, 0.2, 1) both;
+  }
+
+  @keyframes mobileNavIn {
+    from { opacity: 0; transform: translateY(-12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .navbar.nav-open > nav > a {
+    padding: 16px 0;
+    font-size: 15px;
+    font-weight: 700;
+    border-bottom: 1px solid #f0f4fa;
+    color: #1b1f24;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* Dropdown in mobile menu */
+  .navbar.nav-open .nav-dropdown {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    border-bottom: 1px solid #f0f4fa;
+  }
+
+  .navbar.nav-open .nav-dropdown-toggle {
+    padding: 16px 0;
+    font-size: 15px;
+    font-weight: 700;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: none;
+  }
+
+  /* Dropdown submenu accordion */
+  .navbar.nav-open .nav-dropdown-menu {
+    position: static;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    min-width: unset;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #f7fafd;
+    border-radius: 10px;
+    margin: 0 0 12px;
+    padding: 0;
+    transition: max-height 0.35s ease, opacity 0.25s ease, padding 0.25s ease;
+  }
+
+  .navbar.nav-open .nav-dropdown.open .nav-dropdown-menu {
+    opacity: 1;
+    max-height: 500px;
+    padding: 8px 0;
+  }
+
+  .navbar.nav-open .nav-dropdown-toggle::after {
+    transition: transform 0.3s ease;
+  }
+
+  .navbar.nav-open .nav-dropdown.open .nav-dropdown-toggle::after {
+    transform: rotate(45deg);
+  }
+
+  .navbar.nav-open .nav-dropdown-item {
+    padding: 12px 20px;
+    font-size: 13px;
+  }
+
+  /* Hamburger sits on top of open menu */
+  .navbar.nav-open .nav-hamburger {
+    z-index: 1100;
+    position: relative;
+  }
+
+  /* ══════════════ Section / Layout fixes ══════════════ */
+
+  /* Hero */
+  .hero {
+    flex-direction: column;
+    padding: 36px 24px 0;
+    margin: 12px 16px;
+    text-align: center;
+    background-position: center bottom, center, center;
+    min-height: unset;
+    overflow: visible;
+  }
+
+  .hero-left {
+    max-width: 100%;
+    align-items: center;
+    height: auto;
+  }
+
+  .hero-left h1 {
+    font-size: 32px;
+    white-space: normal;
+    margin-left: 0;
+  }
+
+  .hero-left p {
+    margin-left: 0;
+    font-size: 17px;
+    margin-bottom: 24px;
+  }
+
+  /* CTA: remove absolute positioning on mobile */
+  .cta {
+    position: static;
+    bottom: auto;
+    left: auto;
+    margin: 0 auto 32px;
+    display: block;
+    width: fit-content;
+    padding: 16px 36px;
+    font-size: 15px;
+  }
+
+  /* Hero image: sit below the text, grow naturally */
+  .hero-right {
+    width: 100%;
+    height: auto;
+    margin-top: -40px;
+    overflow: visible;
+  }
+
+  .hero-right img {
+    position: static;
+    width: 85%;
+    height: auto;
+    max-height: 340px;
+    left: auto;
+    top: auto;
+    object-fit: contain;
+    border-radius: 0;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Partners */
+  .partners {
+    padding: 0;
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  .partners h2 {
+    font-size: 22px;
+    padding: 0 20px;
+  }
+
+  .logos-marquee-wrapper {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  /* General section padding */
+  section {
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+
+  /* Contact section */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .contact-inner {
+    padding: 40px 20px;
+  }
+
+  .contact-row-2 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Testimonials */
+  .testimonials-inner {
+    padding: 40px 20px;
+  }
+
+  .t-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .t-header-left h2 {
+    font-size: 26px;
+  }
+
+  .t-review-sources {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .t-header-right {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 16px;
+    padding: 14px 18px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .t-rating-score {
+    font-size: 15px;
+  }
+
+  .t-review-count {
+    font-size: 12px;
+  }
+
+  .t-view-all {
+    font-size: 12px;
+  }
+
+  /* Video carousel */
+  .cs-section .cs-inner {
+    padding: 40px 20px;
+  }
+
+  .cs-card {
+    flex: 0 0 calc(100% - 4px);
+  }
+
+  .cs-heading-row {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-left h1 {
+    font-size: 26px;
+  }
+
+  .navbar {
+    padding: 12px 16px;
+  }
+
+  .cs-card {
+    flex: 0 0 calc(100% - 4px);
+  }
+}

@@ -596,3 +596,57 @@ function handleContactSubmit(form) {
 }
 
 
+
+/* ─────────────────────────────────────────────
+   Hamburger / Mobile Nav
+   ───────────────────────────────────────────── */
+(function () {
+  'use strict';
+
+  var hamburger = document.getElementById('navHamburger');
+  var navbar    = document.querySelector('.navbar');
+  if (!hamburger || !navbar) return;
+
+  function closeMenu() {
+    navbar.classList.remove('nav-open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  // Toggle menu
+  hamburger.addEventListener('click', function () {
+    var isOpen = navbar.classList.toggle('nav-open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  // Close when a non-toggle link is clicked
+  navbar.querySelectorAll('nav a').forEach(function (link) {
+    if (!link.classList.contains('nav-dropdown-toggle')) {
+      link.addEventListener('click', closeMenu);
+    }
+  });
+
+  // Accordion for About dropdown on mobile
+  navbar.querySelectorAll('.nav-dropdown-toggle').forEach(function (toggle) {
+    toggle.addEventListener('click', function (e) {
+      if (window.innerWidth <= 900) {
+        e.preventDefault();
+        var dropdown = toggle.closest('.nav-dropdown');
+        dropdown.classList.toggle('open');
+      }
+    });
+  });
+
+  // Close on resize to desktop
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 900) closeMenu();
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeMenu();
+  });
+})();
