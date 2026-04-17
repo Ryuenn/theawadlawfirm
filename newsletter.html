@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Awad Law Firm Newsletters | Monthly Legal Insights &mdash; Awad Law Firm</title>
+<meta name="description" content="Browse Awad Law Firm newsletters featuring insights, community events, case updates, and legal education resources. Read our latest publications on personal injury law and firm updates.">
+
+<link rel="icon" type="image/png" href="assets/awadlawfirmlogo.png">
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- JSON-LD: LegalService -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Awad Law Firm",
+  "url": "https://www.awadlawfirm.com",
+  "logo": "https://www.awadlawfirm.com/assets/awadlawfirmlogo.png",
+  "telephone": "+17062033097",
+  "description": "Top-rated personal injury law firm serving Atlanta, Marietta, and Dalton, Georgia.",
+  "founder": { "@type": "Person", "name": "Ibrahim J. Awad, Esq." },
+  "serviceArea": { "@type": "State", "name": "Georgia" },
+  "areaServed": [
+    {"@type": "City", "name": "Atlanta"},
+    {"@type": "City", "name": "Marietta"},
+    {"@type": "City", "name": "Dalton"}
+  ],
+  "address": [
+    {"@type": "PostalAddress", "streetAddress": "4076 Ebenezer Rd.", "addressLocality": "Marietta", "addressRegion": "GA", "addressCountry": "US"},
+    {"@type": "PostalAddress", "streetAddress": "210 North Glenwood Ave.", "addressLocality": "Dalton", "addressRegion": "GA", "addressCountry": "US"}
+  ]
+}
+</script>
+
+<!-- JSON-LD: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.awadlawfirm.com/index.html"},
+    {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://www.awadlawfirm.com/#resources"},
+    {"@type": "ListItem", "position": 3, "name": "Newsletter", "item": "https://www.awadlawfirm.com/newsletter.html"}
+  ]
+}
+</script>
+
+<style>
+:root{
+    --awad-gold:#d4af37;
+    --awad-paper:#f7f1e8;
+    --awad-paper-2:#efe4d4;
+}
+
+.newsletter-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+@media (max-width: 900px) {
+    .newsletter-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .newsletter-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.awad-flipbook-widget{
+    width:100%;
+}
+
+.awad-flipbook-trigger{
+    width:100%;
+    aspect-ratio:350 / 500;
+    cursor:pointer;
+    position:relative;
+    z-index:5;
+    overflow:hidden;
+    border-radius:10px;
+    box-shadow:0 10px 28px rgba(0,0,0,0.16);
+    transition:transform 0.25s ease, box-shadow 0.25s ease;
+    background:#111;
+}
+
+.awad-flipbook-trigger:hover{
+    transform:translateY(-4px);
+    box-shadow:0 16px 40px rgba(0,0,0,0.24);
+}
+
+.awad-flipbook-trigger img{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+    object-position:center top;
+}
+
+.awad-trigger-text{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    padding:14px 16px;
+    background:rgba(17,17,17,0.88);
+    color:var(--awad-gold);
+    text-align:center;
+    font-family:sans-serif;
+    font-size:14px;
+    font-weight:800;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.awad-flipbook-modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    z-index:999999;
+    background:rgba(0,0,0,0.94);
+    overflow:hidden;
+}
+
+.awad-flipbook-modal.show{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.awad-modal-content{
+    position:relative;
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.awad-close-btn{
+    position:absolute;
+    top:18px;
+    right:18px;
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(0,0,0,0.45);
+    color:var(--awad-gold);
+    font-size:34px;
+    line-height:1;
+    cursor:pointer;
+    z-index:10000;
+    transition:all 0.25s ease;
+    user-select:none;
+}
+
+.awad-close-btn:hover{
+    background:rgba(212,175,55,0.22);
+    color:#fff;
+    transform:scale(1.06);
+}
+
+.awad-ultra-wrapper{
+    position:relative;
+    width:100%;
+    max-width:1400px;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:24px 20px 95px;
+    box-sizing:border-box;
+}
+
+.awad-loading{
+    position:absolute;
+    top:48%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    color:var(--awad-gold);
+    font-family:sans-serif;
+    font-weight:800;
+    letter-spacing:2px;
+    z-index:30;
+    text-align:center;
+    width:100%;
+    pointer-events:none;
+}
+
+.awad-book-stage{
+    width:min(92vw,1180px);
+    height:min(78vh,760px);
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    isolation:isolate;
+    perspective:2400px;
+}
+
+.awad-ultra-container{
+    width:100%;
+    height:100%;
+    position:relative;
+    opacity:0;
+    visibility:hidden;
+    transition:opacity 0.35s ease;
+    overflow:hidden;
+    z-index:2;
+}
+
+.fb-page{
+    background:linear-gradient(180deg, var(--awad-paper) 0%, var(--awad-paper-2) 100%);
+    overflow:hidden;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    backface-visibility:hidden;
+    -webkit-backface-visibility:hidden;
+}
+
+.fb-page img{
+    position:relative;
+    z-index:1;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position:center center;
+    display:block;
+    pointer-events:none;
+    user-select:none;
+    -webkit-user-drag:none;
+    backface-visibility:hidden;
+    -webkit-backface-visibility:hidden;
+}
+
+.fb-cover,
+.fb-page[data-density="hard"]{
+    background:#181818;
+}
+
+.stf__parent,.stf__wrapper,.stf__block,.stf__item,.stf__page{
+    backface-visibility:hidden !important;
+    -webkit-backface-visibility:hidden !important;
+    transform-style:preserve-3d;
+    -webkit-transform-style:preserve-3d;
+}
+
+.stf__item{ will-change:transform; }
+
+.fb-ultra-nav{
+    position:absolute;
+    bottom:22px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    align-items:center;
+    gap:16px;
+    background:rgba(17,17,17,0.96);
+    border:1px solid rgba(212,175,55,0.35);
+    border-radius:60px;
+    padding:12px 20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.35);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity 0.35s ease;
+    z-index:200;
+}
+
+.fb-ultra-nav button{
+    appearance:none;
+    border:1px solid var(--awad-gold);
+    background:transparent;
+    color:var(--awad-gold);
+    padding:10px 18px;
+    border-radius:30px;
+    font-family:sans-serif;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    cursor:pointer;
+    transition:all 0.25s ease;
+}
+
+.fb-ultra-nav button:hover:not(:disabled){ background:var(--awad-gold); color:#000; }
+.fb-ultra-nav button:disabled{ opacity:0.25; cursor:not-allowed; }
+
+.fb-info{
+    color:#fff;
+    font-family:sans-serif;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:1.5px;
+    min-width:100px;
+    text-align:center;
+    white-space:nowrap;
+}
+
+@media (max-width:767px){
+    .awad-book-stage{ width:min(96vw,560px); height:min(62vh,720px); }
+    .awad-close-btn{ top:12px; right:12px; width:44px; height:44px; font-size:28px; }
+    .fb-ultra-nav{ padding:10px 14px; gap:10px; }
+    .fb-ultra-nav button{ padding:9px 14px; font-size:10px; }
+    .fb-info{ min-width:auto; font-size:11px; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="logo">
+    <img src="assets/awadlawfirmlogo.png" alt="Awad Law Firm Logo">
+</div>
+
+<nav>
+
+<a href="index.html">Home</a>
+<div class="nav-dropdown">
+  <a href="#" class="nav-dropdown-toggle">About</a>
+  <div class="nav-dropdown-menu">
+    <a href="mission-vision.html" class="nav-dropdown-item">Mission &amp; Vision</a>
+    <a href="about.html" class="nav-dropdown-item">Firm History</a>
+    <a href="ibrahim-awad.html" class="nav-dropdown-item">Ibrahim Awad</a>
+    <a href="team-experts.html" class="nav-dropdown-item">Team of Experts</a>
+    <a href="community.html" class="nav-dropdown-item">Community</a>
+  </div>
+</div>
+<div class="nav-dropdown">
+  <a href="practice-areas.html" class="nav-dropdown-toggle">Practice Areas</a>
+  <div class="nav-dropdown-menu">
+    <a href="personal-injury.html" class="nav-dropdown-item">Personal Injury</a>
+    <a href="car-accidents.html" class="nav-dropdown-item">Car Accidents</a>
+    <a href="trucking-accidents.html" class="nav-dropdown-item">Trucking Accidents</a>
+    <a href="motorcycle-accidents.html" class="nav-dropdown-item">Motorcycle Accidents</a>
+    <a href="bicycle-accidents.html" class="nav-dropdown-item">Bicycle Accidents</a>
+    <a href="uber-accidents.html" class="nav-dropdown-item">Uber Accidents</a>
+    <a href="lyft-accidents.html" class="nav-dropdown-item">Lyft Accidents</a>
+    <a href="slip-and-fall.html" class="nav-dropdown-item">Slip &amp; Fall</a>
+    <a href="medical-malpractice.html" class="nav-dropdown-item">Medical Malpractice</a>
+    <a href="wrongful-death.html" class="nav-dropdown-item">Wrongful Death</a>
+  </div>
+</div>
+<div class="nav-dropdown">
+  <a href="results.html" class="nav-dropdown-toggle">Results</a>
+  <div class="nav-dropdown-menu">
+    <a href="results.html" class="nav-dropdown-item">Case Studies</a>
+    <a href="testimonials.html" class="nav-dropdown-item">Testimonials</a>
+  </div>
+</div>
+<div class="nav-dropdown">
+  <a href="#" class="nav-dropdown-toggle">Resources</a>
+  <div class="nav-dropdown-menu">
+    <a href="tedx.html" class="nav-dropdown-item">TEDx</a>
+    <a href="education.html" class="nav-dropdown-item">Education</a>
+    <a href="newsletter.html" class="nav-dropdown-item">Newsletter</a>
+    <a href="#" class="nav-dropdown-item">Academy</a>
+  </div>
+</div>
+<a href="contact.html">Contact</a>
+
+</nav>
+
+<div class="nav-icons">
+
+<button class="nav-btn">
+
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<rect x="2" y="4" width="20" height="16" rx="2"></rect>
+<path d="m22 7-10 5L2 7"></path>
+</svg>
+
+</button>
+
+
+<button class="nav-btn">
+
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path d="M22 16.92v3a2 2 0 0 1-2.18 2 
+19.79 19.79 0 0 1-8.63-3.07 
+19.5 19.5 0 0 1-6-6 
+19.79 19.79 0 0 1-3.07-8.63 
+2 2 0 0 1 2-2h3
+a2 2 0 0 1 2 1.72
+c.12.91.35 1.8.68 2.65
+a2 2 0 0 1-.45 2.11
+L8.09 9.91
+a16 16 0 0 0 6 6
+l1.43-1.25
+a2 2 0 0 1 2.11-.45
+c.85.33 1.74.56 2.65.68
+A2 2 0 0 1 22 16.92z"></path>
+</svg>
+
+</button>
+
+</div>
+
+  <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+</header>
+
+<!-- NEWSLETTER GRID -->
+<div class="newsletter-grid">
+
+    <!-- ==================== CARD 1 ==================== -->
+    <div class="awad-flipbook-widget">
+        <div class="awad-flipbook-trigger">
+            <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Most-Impressive-Employee-OPT-2-2-scaled.jpg" alt="Newsletter">
+            <div class="awad-trigger-text">Click to Read Newsletter</div>
+        </div>
+        <div class="awad-flipbook-modal">
+            <div class="awad-modal-content">
+                <span class="awad-close-btn">&times;</span>
+                <div class="awad-ultra-wrapper">
+                    <div class="awad-loading">LOADING BOOK...</div>
+                    <div class="awad-book-stage">
+                        <div class="newsletter-book awad-ultra-container">
+                            <div class="fb-page fb-cover" data-density="hard">
+                                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Most-Impressive-Employee-OPT-2-2-scaled.jpg" alt="Front Cover">
+                            </div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/activity-center-2-scaled.jpg" alt="Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Birthday-Shotouts-1-scaled.jpg" alt="Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/clients-Corner-1-scaled.jpg" alt="Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Clients-Corner-Sherif-1-scaled.jpg" alt="Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Grand-Iftar-2-scaled.jpg" alt="Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/grand-opening-1-scaled.jpg" alt="Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/karate-attorney-kickin-advice-1-scaled.jpg" alt="Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/M11-Design-studio-atlanta-1-scaled.jpg" alt="Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/managers-corner-1-scaled.jpg" alt="Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/our-virtual-employees-1-scaled.jpg" alt="Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Palistory-At-5K-GAZA-2-scaled.jpg" alt="Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/ramadan-iftar-1-scaled.jpg" alt="Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Sponsorship-scaled.jpg" alt="Page"></div>
+                            <div class="fb-page fb-cover" data-density="hard">
+                                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/top-3-bonusly-1-scaled.jpg" alt="Back Cover">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fb-ultra-nav">
+                        <button class="fb-prev" type="button">Prev</button>
+                        <span class="fb-info">Page 1</span>
+                        <button class="fb-next" type="button">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CARD 2 ==================== -->
+    <div class="awad-flipbook-widget">
+        <div class="awad-flipbook-trigger">
+            <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-1-scaled.png" alt="Click to open newsletter">
+            <div class="awad-trigger-text">Click to Read Newsletter</div>
+        </div>
+        <div class="awad-flipbook-modal">
+            <div class="awad-modal-content">
+                <span class="awad-close-btn">&times;</span>
+                <div class="awad-ultra-wrapper">
+                    <div class="awad-loading">LOADING BOOK...</div>
+                    <div class="awad-book-stage">
+                        <div class="newsletter-book awad-ultra-container">
+                            <div class="fb-page fb-cover" data-density="hard">
+                                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-1-scaled.png" alt="Front Cover">
+                            </div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-5-scaled.png" alt="Newsletter Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-4-scaled.png" alt="Newsletter Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-3-scaled.png" alt="Newsletter Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-2-scaled.png" alt="Newsletter Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-6-scaled.png" alt="Newsletter Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-7-scaled.png" alt="Newsletter Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-8-scaled.png" alt="Newsletter Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-9-scaled.png" alt="Newsletter Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-10-scaled.png" alt="Newsletter Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-11-scaled.png" alt="Newsletter Page"></div>
+                            <div class="fb-page fb-cover" data-density="hard">
+                                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-12-scaled.png" alt="Back Cover">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fb-ultra-nav">
+                        <button class="fb-prev" type="button">Prev</button>
+                        <span class="fb-info">Page 1</span>
+                        <button class="fb-next" type="button">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CARD 3 ==================== -->
+    <div class="awad-flipbook-widget">
+        <div class="awad-flipbook-trigger">
+            <img src="https://theawadlawfirm.com/wp-content/uploads/2026/04/page1-1-scaled.png" alt="Click to open newsletter">
+            <div class="awad-trigger-text">Click to Read Newsletter</div>
+        </div>
+        <div class="awad-flipbook-modal">
+            <div class="awad-modal-content">
+                <span class="awad-close-btn">&times;</span>
+                <div class="awad-ultra-wrapper">
+                    <div class="awad-loading">LOADING BOOK...</div>
+                    <div class="awad-book-stage">
+                        <div class="newsletter-book awad-ultra-container">
+                            <div class="fb-page fb-cover" data-density="hard">
+                                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/04/page1-1-scaled.png" alt="Front Cover">
+                            </div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/04/January-2026-Edition-1-scaled.png" alt="Page 2"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/04/page3-1-scaled.png" alt="Page 3"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/04/page4-1-scaled.png" alt="Page 4"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/04/page5-1-scaled.png" alt="Page 5"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/04/page6-1-scaled.png" alt="Page 6"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/04/page7-1-scaled.png" alt="Page 7"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/04/page8-1-scaled.png" alt="Page 8"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/04/page9-1-scaled.png" alt="Page 9"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/04/page10-1-scaled.png" alt="Page 10"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/04/page11-1-scaled.png" alt="Page 11"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/04/page12-1-scaled.png" alt="Page 12"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/04/page13-1-scaled.png" alt="Page 13"></div>
+                            <div class="fb-page fb-cover" data-density="hard">
+                                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/04/page14-1-scaled.png" alt="Back Cover">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fb-ultra-nav">
+                        <button class="fb-prev" type="button">Prev</button>
+                        <span class="fb-info">Page 1</span>
+                        <button class="fb-next" type="button">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CARD 4 ==================== -->
+    <div class="awad-flipbook-widget">
+        <div class="awad-flipbook-trigger">
+            <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-1-2-scaled.png" alt="Click to open newsletter">
+            <div class="awad-trigger-text">Click to Read Newsletter</div>
+        </div>
+        <div class="awad-flipbook-modal">
+            <div class="awad-modal-content">
+                <span class="awad-close-btn">&times;</span>
+                <div class="awad-ultra-wrapper">
+                    <div class="awad-loading">LOADING BOOK...</div>
+                    <div class="awad-book-stage">
+                        <div class="newsletter-book awad-ultra-container">
+                            <div class="fb-page fb-cover" data-density="hard">
+                                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-1-2-scaled.png" alt="Front Cover">
+                            </div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-2-4-scaled.png" alt="Newsletter Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-3-3-scaled.png" alt="Newsletter Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-4-3-scaled.png" alt="Newsletter Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-5-2-scaled.png" alt="Newsletter Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-6-2-scaled.png" alt="Newsletter Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-7-2-scaled.png" alt="Newsletter Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-8-2-scaled.png" alt="Newsletter Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-9-2-scaled.png" alt="Newsletter Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-10-2-scaled.png" alt="Newsletter Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-11-2-scaled.png" alt="Newsletter Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-12-2-scaled.png" alt="Newsletter Page"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-13-1-scaled.png" alt="Newsletter Page"></div>
+                            <div class="fb-page fb-cover" data-density="hard">
+                                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-14-1-scaled.png" alt="Back Cover">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fb-ultra-nav">
+                        <button class="fb-prev" type="button">Prev</button>
+                        <span class="fb-info">Page 1</span>
+                        <button class="fb-next" type="button">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CARD 5 ==================== -->
+    <div class="awad-flipbook-widget">
+        <div class="awad-flipbook-trigger">
+            <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-1-3.png" alt="Click to open newsletter">
+            <div class="awad-trigger-text">Click to Read Newsletter</div>
+        </div>
+        <div class="awad-flipbook-modal">
+            <div class="awad-modal-content">
+                <span class="awad-close-btn">&times;</span>
+                <div class="awad-ultra-wrapper">
+                    <div class="awad-loading">LOADING BOOK...</div>
+                    <div class="awad-book-stage">
+                        <div class="newsletter-book awad-ultra-container">
+                            <div class="fb-page fb-cover" data-density="hard">
+                                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-1-3.png" alt="Front Cover">
+                            </div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-2-5.png" alt="Page 2"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-3-4.png" alt="Page 3"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-4-4.png" alt="Page 4"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-14-2.png" alt="Page 5"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-15.png" alt="Page 6"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-10-3.png" alt="Page 7"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-11-3.png" alt="Page 8"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-12-3.png" alt="Page 9"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-13-2.png" alt="Page 10"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-5-3.png" alt="Page 11"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-6-3.png" alt="Page 12"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-8-3.png" alt="Page 13"></div>
+                            <div class="fb-page fb-cover" data-density="hard">
+                                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-9-3.png" alt="Back Cover">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fb-ultra-nav">
+                        <button class="fb-prev" type="button">Prev</button>
+                        <span class="fb-info">Page 1</span>
+                        <button class="fb-next" type="button">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CARD 6 ==================== -->
+    <div class="awad-flipbook-widget">
+        <div class="awad-flipbook-trigger">
+            <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-1-7.png" alt="Click to open newsletter">
+            <div class="awad-trigger-text">Click to Read Newsletter</div>
+        </div>
+        <div class="awad-flipbook-modal">
+            <div class="awad-modal-content">
+                <span class="awad-close-btn">&times;</span>
+                <div class="awad-ultra-wrapper">
+                    <div class="awad-loading">LOADING BOOK...</div>
+                    <div class="awad-book-stage">
+                        <div class="newsletter-book awad-ultra-container">
+                            <div class="fb-page fb-cover" data-density="hard">
+                                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-1-7.png" alt="Front Cover">
+                            </div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-2-7.png" alt="Page 2"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-3-6.png" alt="Page 3"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-4-6.png" alt="Page 4"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-5-5.png" alt="Page 5"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-6-5.png" alt="Page 6"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-7-8.png" alt="Page 7"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-8-5.png" alt="Page 8"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-9-5.png" alt="Page 9"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-10-8.png" alt="Page 10"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-11-5.png" alt="Page 11"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-12-8.png" alt="Page 12"></div>
+                            <div class="fb-page fb-cover" data-density="hard">
+                                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-13-6.png" alt="Back Cover">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fb-ultra-nav">
+                        <button class="fb-prev" type="button">Prev</button>
+                        <span class="fb-info">Page 1</span>
+                        <button class="fb-next" type="button">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CARD 7 ==================== -->
+    <div class="awad-flipbook-widget">
+        <div class="awad-flipbook-trigger">
+            <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-2-9.png" alt="Click to open newsletter">
+            <div class="awad-trigger-text">Click to Read Newsletter</div>
+        </div>
+        <div class="awad-flipbook-modal">
+            <div class="awad-modal-content">
+                <span class="awad-close-btn">&times;</span>
+                <div class="awad-ultra-wrapper">
+                    <div class="awad-loading">LOADING BOOK...</div>
+                    <div class="awad-book-stage">
+                        <div class="newsletter-book awad-ultra-container">
+                            <div class="fb-page fb-cover" data-density="hard">
+                                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-2-9.png" alt="Front Cover">
+                            </div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-3-8.png" alt="Page 2"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-4-8.png" alt="Page 3"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-5-7.png" alt="Page 4"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-6-7.png" alt="Page 5"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-7-10.png" alt="Page 6"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-8-7.png" alt="Page 7"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-9-7.png" alt="Page 8"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-10-10.png" alt="Page 9"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-11-7.png" alt="Page 10"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-12-10.png" alt="Page 11"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-13-8.png" alt="Page 12"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-14-4.png" alt="Page 13"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-15-1.png" alt="Page 14"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-16.png" alt="Page 15"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-17.png" alt="Page 16"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-18.png" alt="Page 17"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-19.png" alt="Page 18"></div>
+                            <div class="fb-page fb-cover" data-density="hard">
+                                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-20.png" alt="Back Cover">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fb-ultra-nav">
+                        <button class="fb-prev" type="button">Prev</button>
+                        <span class="fb-info">Page 1</span>
+                        <button class="fb-next" type="button">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CARD 8 ==================== -->
+    <div class="awad-flipbook-widget">
+        <div class="awad-flipbook-trigger">
+            <img src="https://theawadlawfirm.com/wp-content/uploads/2026/04/page1-1-1-scaled.png" alt="Click to open newsletter">
+            <div class="awad-trigger-text">Click to Read Newsletter</div>
+        </div>
+        <div class="awad-flipbook-modal">
+            <div class="awad-modal-content">
+                <span class="awad-close-btn">&times;</span>
+                <div class="awad-ultra-wrapper">
+                    <div class="awad-loading">LOADING BOOK...</div>
+                    <div class="awad-book-stage">
+                        <div class="newsletter-book awad-ultra-container">
+                            <div class="fb-page fb-cover" data-density="hard">
+                                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/04/page1-1-1-scaled.png" alt="Front Cover">
+                            </div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/04/page2-1-scaled.png" alt="Page 2"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/04/page3-1-1-scaled.png" alt="Page 3"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/04/page4-1-1-scaled.png" alt="Page 4"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/04/page5-1-1-scaled.png" alt="Page 5"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/04/page6-1-1-scaled.png" alt="Page 6"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/04/page7-1-1-scaled.png" alt="Page 7"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/04/page8-1-1-scaled.png" alt="Page 8"></div>
+                            <div class="fb-page fb-cover" data-density="hard">
+                                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/04/page9-1-1-scaled.png" alt="Back Cover">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fb-ultra-nav">
+                        <button class="fb-prev" type="button">Prev</button>
+                        <span class="fb-info">Page 1</span>
+                        <button class="fb-next" type="button">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CARD 9 ==================== -->
+    <div class="awad-flipbook-widget">
+        <div class="awad-flipbook-trigger">
+            <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-1-8-scaled.png" alt="Click to open newsletter">
+            <div class="awad-trigger-text">Click to Read Newsletter</div>
+        </div>
+        <div class="awad-flipbook-modal">
+            <div class="awad-modal-content">
+                <span class="awad-close-btn">&times;</span>
+                <div class="awad-ultra-wrapper">
+                    <div class="awad-loading">LOADING BOOK...</div>
+                    <div class="awad-book-stage">
+                        <div class="newsletter-book awad-ultra-container">
+                            <div class="fb-page fb-cover" data-density="hard">
+                                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-1-8-scaled.png" alt="Front Cover">
+                            </div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-2-8-scaled.png" alt="Page 2"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-3-7-scaled.png" alt="Page 3"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-4-7-scaled.png" alt="Page 4"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-5-6-scaled.png" alt="Page 5"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-6-6-scaled.png" alt="Page 6"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-7-9-scaled.png" alt="Page 7"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-8-6-scaled.png" alt="Page 8"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-9-6-scaled.png" alt="Page 9"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-10-9-scaled.png" alt="Page 10"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-11-6-scaled.png" alt="Page 11"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-12-9-scaled.png" alt="Page 12"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-13-7-scaled.png" alt="Page 13"></div>
+                            <div class="fb-page fb-cover" data-density="hard">
+                                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-14-3-scaled.png" alt="Back Cover">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fb-ultra-nav">
+                        <button class="fb-prev" type="button">Prev</button>
+                        <span class="fb-info">Page 1</span>
+                        <button class="fb-next" type="button">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CARD 10 ==================== -->
+    <div class="awad-flipbook-widget">
+        <div class="awad-flipbook-trigger">
+            <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-13-9.png" alt="Click to open newsletter">
+            <div class="awad-trigger-text">Click to Read Newsletter</div>
+        </div>
+        <div class="awad-flipbook-modal">
+            <div class="awad-modal-content">
+                <span class="awad-close-btn">&times;</span>
+                <div class="awad-ultra-wrapper">
+                    <div class="awad-loading">LOADING BOOK...</div>
+                    <div class="awad-book-stage">
+                        <div class="newsletter-book awad-ultra-container">
+                            <div class="fb-page fb-cover" data-density="hard">
+                                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-13-9.png" alt="Front Cover">
+                            </div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-14-5.png" alt="Page 2"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-15-2.png" alt="Page 3"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-16-1.png" alt="Page 4"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-17-1.png" alt="Page 5"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-18-1.png" alt="Page 6"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-19-1.png" alt="Page 7"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-20-1.png" alt="Page 8"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-22.png" alt="Page 9"></div>
+                            <div class="fb-page fb-cover" data-density="hard">
+                                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-24.png" alt="Back Cover">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fb-ultra-nav">
+                        <button class="fb-prev" type="button">Prev</button>
+                        <span class="fb-info">Page 1</span>
+                        <button class="fb-next" type="button">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CARD 11 ==================== -->
+    <div class="awad-flipbook-widget">
+        <div class="awad-flipbook-trigger">
+            <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-1-9.png" alt="Click to open newsletter">
+            <div class="awad-trigger-text">Click to Read Newsletter</div>
+        </div>
+        <div class="awad-flipbook-modal">
+            <div class="awad-modal-content">
+                <span class="awad-close-btn">&times;</span>
+                <div class="awad-ultra-wrapper">
+                    <div class="awad-loading">LOADING BOOK...</div>
+                    <div class="awad-book-stage">
+                        <div class="newsletter-book awad-ultra-container">
+                            <div class="fb-page fb-cover" data-density="hard">
+                                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-1-9.png" alt="Front Cover">
+                            </div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-3-9.png" alt="Page 2"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-4-9.png" alt="Page 3"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-5-9.png" alt="Page 4"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-6-8.png" alt="Page 5"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-7-11.png" alt="Page 6"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-8-8.png" alt="Page 7"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-9-8.png" alt="Page 8"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-10-11.png" alt="Page 9"></div>
+                            <div class="fb-page fb-cover" data-density="hard">
+                                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-23.png" alt="Back Cover">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fb-ultra-nav">
+                        <button class="fb-prev" type="button">Prev</button>
+                        <span class="fb-info">Page 1</span>
+                        <button class="fb-next" type="button">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CARD 12 ==================== -->
+    <div class="awad-flipbook-widget">
+        <div class="awad-flipbook-trigger">
+            <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-1-10.png" alt="Click to open newsletter">
+            <div class="awad-trigger-text">Click to Read Newsletter</div>
+        </div>
+        <div class="awad-flipbook-modal">
+            <div class="awad-modal-content">
+                <span class="awad-close-btn">&times;</span>
+                <div class="awad-ultra-wrapper">
+                    <div class="awad-loading">LOADING BOOK...</div>
+                    <div class="awad-book-stage">
+                        <div class="newsletter-book awad-ultra-container">
+                            <div class="fb-page fb-cover" data-density="hard">
+                                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-1-10.png" alt="Front Cover">
+                            </div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-2-11.png" alt="Page 2"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-3-10.png" alt="Page 3"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-4-10.png" alt="Page 4"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-5-10.png" alt="Page 5"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-6-9.png" alt="Page 6"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-7-12.png" alt="Page 7"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-8-9.png" alt="Page 8"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-9-9.png" alt="Page 9"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-10-12.png" alt="Page 10"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-11-8.png" alt="Page 11"></div>
+                            <div class="fb-page fb-cover" data-density="hard">
+                                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-12-11.png" alt="Back Cover">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fb-ultra-nav">
+                        <button class="fb-prev" type="button">Prev</button>
+                        <span class="fb-info">Page 1</span>
+                        <button class="fb-next" type="button">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CARD 13 ==================== -->
+    <div class="awad-flipbook-widget">
+        <div class="awad-flipbook-trigger">
+            <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-1-12.png" alt="Click to open newsletter">
+            <div class="awad-trigger-text">Click to Read Newsletter</div>
+        </div>
+        <div class="awad-flipbook-modal">
+            <div class="awad-modal-content">
+                <span class="awad-close-btn">&times;</span>
+                <div class="awad-ultra-wrapper">
+                    <div class="awad-loading">LOADING BOOK...</div>
+                    <div class="awad-book-stage">
+                        <div class="newsletter-book awad-ultra-container">
+                            <div class="fb-page fb-cover" data-density="hard">
+                                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-1-12.png" alt="Front Cover">
+                            </div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-2-13.png" alt="Page 2"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-3-12.png" alt="Page 3"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-4-12.png" alt="Page 4"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-5-12.png" alt="Page 5"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-6-11.png" alt="Page 6"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-7-14.png" alt="Page 7"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-8-11.png" alt="Page 8"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-9-11.png" alt="Page 9"></div>
+                            <div class="fb-page fb-cover" data-density="hard">
+                                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-10-15.png" alt="Back Cover">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fb-ultra-nav">
+                        <button class="fb-prev" type="button">Prev</button>
+                        <span class="fb-info">Page 1</span>
+                        <button class="fb-next" type="button">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CARD 14 ==================== -->
+    <div class="awad-flipbook-widget">
+        <div class="awad-flipbook-trigger">
+            <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-1-11.png" alt="Click to open newsletter">
+            <div class="awad-trigger-text">Click to Read Newsletter</div>
+        </div>
+        <div class="awad-flipbook-modal">
+            <div class="awad-modal-content">
+                <span class="awad-close-btn">&times;</span>
+                <div class="awad-ultra-wrapper">
+                    <div class="awad-loading">LOADING BOOK...</div>
+                    <div class="awad-book-stage">
+                        <div class="newsletter-book awad-ultra-container">
+                            <div class="fb-page fb-cover" data-density="hard">
+                                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-1-11.png" alt="Front Cover">
+                            </div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-2-12.png" alt="Page 2"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-3-11.png" alt="Page 3"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-4-11.png" alt="Page 4"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-5-11.png" alt="Page 5"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-6-10.png" alt="Page 6"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-7-13.png" alt="Page 7"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-8-10.png" alt="Page 8"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-9-10.png" alt="Page 9"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-10-14.png" alt="Page 10"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-11-9.png" alt="Page 11"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-12-12.png" alt="Page 12"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-13-10.png" alt="Page 13"></div>
+                            <div class="fb-page"><img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-14-6.png" alt="Page 14"></div>
+                            <div class="fb-page fb-cover" data-density="hard">
+                                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-15-3.png" alt="Back Cover">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fb-ultra-nav">
+                        <button class="fb-prev" type="button">Prev</button>
+                        <span class="fb-info">Page 1</span>
+                        <button class="fb-next" type="button">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.min.js"></script>
+<script>
+(function () {
+    const flipbooks = new WeakMap();
+
+    function preloadImages(container, done) {
+        const images = Array.from(container.querySelectorAll('img'));
+        if (!images.length) { done(); return; }
+        let loaded = 0;
+        function checkDone() { loaded++; if (loaded === images.length) done(); }
+        images.forEach(function (img) {
+            const src = img.getAttribute('src');
+            if (!src) { checkDone(); return; }
+            const testImg = new Image();
+            testImg.onload = checkDone;
+            testImg.onerror = checkDone;
+            testImg.src = src;
+        });
+    }
+
+    function getRefs(widget) {
+        return {
+            trigger: widget.querySelector('.awad-flipbook-trigger'),
+            modal: widget.querySelector('.awad-flipbook-modal'),
+            closeBtn: widget.querySelector('.awad-close-btn'),
+            book: widget.querySelector('.newsletter-book'),
+            nav: widget.querySelector('.fb-ultra-nav'),
+            loader: widget.querySelector('.awad-loading'),
+            prevBtn: widget.querySelector('.fb-prev'),
+            nextBtn: widget.querySelector('.fb-next'),
+            info: widget.querySelector('.fb-info'),
+            bookStage: widget.querySelector('.awad-book-stage')
+        };
+    }
+
+    function getBookSize(bookStage) {
+        const rect = bookStage.getBoundingClientRect();
+        const isMobile = window.innerWidth < 768;
+        if (isMobile) {
+            return { width: Math.max(260, Math.floor(rect.width * 0.90)), height: Math.max(360, Math.floor(rect.height * 0.94)) };
+        }
+        return { width: Math.max(420, Math.floor(rect.width * 0.44)), height: Math.max(420, Math.floor(rect.height * 0.92)) };
+    }
+
+    function updateUI(state) {
+        if (!state.pageFlip) return;
+        const total = state.pageFlip.getPageCount();
+        const current = state.pageFlip.getCurrentPageIndex() + 1;
+        state.refs.info.textContent = 'Page ' + current + ' of ' + total;
+        state.refs.prevBtn.disabled = current <= 1;
+        state.refs.nextBtn.disabled = current >= total;
+    }
+
+    function buildFlipbook(state) {
+        const size = getBookSize(state.refs.bookStage);
+        state.pageFlip = new St.PageFlip(state.refs.book, {
+            width: size.width, height: size.height,
+            size: 'fixed', minWidth: 260, maxWidth: 1100,
+            minHeight: 360, maxHeight: 1400,
+            showCover: true, usePortrait: window.innerWidth < 768,
+            flippingTime: 780, maxShadowOpacity: 0.28,
+            drawShadow: true, showPageCorners: true,
+            disableFlipByClick: false, mobileScrollSupport: false,
+            swipeDistance: 16, clickEventForward: true
+        });
+        state.pageFlip.loadFromHTML(state.refs.book.querySelectorAll('.fb-page'));
+        state.refs.prevBtn.onclick = function () { if (state.pageFlip) state.pageFlip.flipPrev(); };
+        state.refs.nextBtn.onclick = function () { if (state.pageFlip) state.pageFlip.flipNext(); };
+        state.pageFlip.on('flip', function () { updateUI(state); });
+        state.pageFlip.on('changeOrientation', function () {
+            setTimeout(function () { if (state.pageFlip) { state.pageFlip.update(); updateUI(state); } }, 80);
+        });
+        updateUI(state);
+    }
+
+    function initWidget(widget) {
+        if (flipbooks.has(widget)) return flipbooks.get(widget);
+        const refs = getRefs(widget);
+        if (!refs.trigger || !refs.modal || !refs.closeBtn || !refs.book || !refs.nav || !refs.prevBtn || !refs.nextBtn || !refs.info || !refs.bookStage) return null;
+        const state = { widget, refs, pageFlip: null, initialized: false, resizeTimer: null };
+        flipbooks.set(widget, state);
+        return state;
+    }
+
+    function openWidget(widget) {
+        const state = initWidget(widget);
+        if (!state) return;
+        state.refs.modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+        if (!state.initialized) {
+            state.refs.book.style.opacity = '0';
+            state.refs.book.style.visibility = 'hidden';
+            state.refs.nav.style.opacity = '0';
+            state.refs.nav.style.pointerEvents = 'none';
+            if (state.refs.loader) state.refs.loader.style.display = 'block';
+            setTimeout(function () {
+                state.refs.book.style.visibility = 'visible';
+                preloadImages(state.refs.book, function () {
+                    buildFlipbook(state);
+                    requestAnimationFrame(function () {
+                        requestAnimationFrame(function () {
+                            if (state.refs.loader) state.refs.loader.style.display = 'none';
+                            state.refs.book.style.opacity = '1';
+                            state.refs.nav.style.opacity = '1';
+                            state.refs.nav.style.pointerEvents = 'auto';
+                            state.initialized = true;
+                        });
+                    });
+                });
+            }, 180);
+        } else {
+            if (state.refs.loader) state.refs.loader.style.display = 'none';
+            state.refs.book.style.visibility = 'visible';
+            state.refs.book.style.opacity = '1';
+            state.refs.nav.style.opacity = '1';
+            state.refs.nav.style.pointerEvents = 'auto';
+            setTimeout(function () { if (state.pageFlip) { state.pageFlip.update(); updateUI(state); } }, 60);
+        }
+    }
+
+    function closeWidget(widget) {
+        const state = flipbooks.get(widget);
+        if (!state) return;
+        state.refs.modal.classList.remove('show');
+        document.body.style.overflow = '';
+        if (state.refs.loader) state.refs.loader.style.display = 'none';
+        state.refs.book.style.opacity = '0';
+        state.refs.book.style.visibility = 'hidden';
+        state.refs.nav.style.opacity = '0';
+        state.refs.nav.style.pointerEvents = 'none';
+    }
+
+    document.addEventListener('click', function (e) {
+        const trigger = e.target.closest('.awad-flipbook-widget .awad-flipbook-trigger');
+        if (trigger) { e.preventDefault(); e.stopPropagation(); openWidget(trigger.closest('.awad-flipbook-widget')); return; }
+        const closeBtn = e.target.closest('.awad-flipbook-widget .awad-close-btn');
+        if (closeBtn) { closeWidget(closeBtn.closest('.awad-flipbook-widget')); return; }
+        const modal = e.target.closest('.awad-flipbook-widget .awad-flipbook-modal');
+        if (modal && e.target === modal) { closeWidget(modal.closest('.awad-flipbook-widget')); }
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key !== 'Escape') return;
+        document.querySelectorAll('.awad-flipbook-widget .awad-flipbook-modal.show').forEach(function (modal) {
+            closeWidget(modal.closest('.awad-flipbook-widget'));
+        });
+    });
+
+    window.addEventListener('resize', function () {
+        document.querySelectorAll('.awad-flipbook-widget').forEach(function (widget) {
+            const state = flipbooks.get(widget);
+            if (!state || !state.initialized || !state.refs.modal.classList.contains('show')) return;
+            clearTimeout(state.resizeTimer);
+            state.resizeTimer = setTimeout(function () {
+                if (!state.pageFlip) return;
+                const currentIndex = state.pageFlip.getCurrentPageIndex();
+                try { state.pageFlip.destroy(); } catch (e) {}
+                state.pageFlip = null;
+                buildFlipbook(state);
+                setTimeout(function () {
+                    if (state.pageFlip) { state.pageFlip.turnToPage(currentIndex); updateUI(state); }
+                    if (state.refs.loader) state.refs.loader.style.display = 'none';
+                }, 60);
+            }, 180);
+        });
+    });
+})();
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
