@@ -3835,8 +3835,8 @@ object-fit:contain;
   }
 
   .watermark-top-right {
-    top: 40px;
-    right: 40px;
+    top: 0;
+    right: 0;
     font-size: 32px;
   }
 
@@ -3858,11 +3858,30 @@ object-fit:contain;
   .mission-vision-container {
     gap: 20px;
     padding: 0 40px;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    grid-auto-rows: 1fr;
   }
 
   .mission-vision-card {
     padding: 30px;
-    min-height: 240px;
+    height: 100%;
+  }
+
+  .purpose-card {
+    text-align: left;
+    margin-bottom: 0;
+    align-self: auto;
+  }
+
+  .legacy-card {
+    text-align: left;
+    margin-top: 0;
+    align-self: auto;
+  }
+
+  .legacy-card .card-label {
+    text-align: left;
   }
 
   .mission-vision-card h3 {
@@ -4042,42 +4061,76 @@ object-fit:contain;
 
 @media (max-width: 580px) {
   .client-promise-section {
-    padding: 60px 40px 30px 40px;
-    min-height: 820px;
+    padding: 40px 20px 0 20px;
+    min-height: auto;
     background: linear-gradient(135deg, #b8d4ee 0%, #aecbe8 50%, #c4d9f0 100%);
+    display: block;
+    overflow: visible;
+  }
+
+  .client-promise-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 25%;
+    background: linear-gradient(180deg, rgba(137,184,229,0) 0%, rgba(137,184,229,0.3) 40%, rgba(120,170,220,0.55) 70%, rgba(100,155,210,0.75) 100%);
+    z-index: 5;
+    pointer-events: none;
   }
 
   .client-promise-inner {
     max-width: 100%;
+    display: block;
   }
 
   .client-promise-bg {
-    width: 500px;
-    height: 380px;
+    display: none;
   }
 
   .client-promise-header {
-    max-width: 90%;
+    position: relative;
+    max-width: 100%;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin-bottom: 20px;
   }
 
   .client-promise-header h2 {
-    font-size: 26px;
+    font-size: 24px;
     margin-bottom: 12px;
+    color: #555;
   }
 
   .client-promise-text {
-    font-size: 12px;
-    margin-bottom: 18px;
+    font-size: 13px;
+    margin-bottom: 16px;
+    line-height: 1.6;
   }
 
   .client-promise-btn {
     font-size: 11px;
     padding: 10px 30px;
+    margin-bottom: -100px;
   }
 
   .client-promise-image {
+    position: relative;
     max-width: 100%;
-    min-height: 500px;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    width: 100%;
+    height: auto;
+    min-height: auto;
+  }
+
+  .client-promise-image img {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 }
 
