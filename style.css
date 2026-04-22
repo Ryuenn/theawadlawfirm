@@ -256,7 +256,7 @@ font-size:16px;
 /* HERO IMAGE */
 
 .hero-right{
-width:450px;
+width:350px;
 height:550px;
 overflow:visible;
 border-radius:15px;
@@ -271,7 +271,7 @@ height:150%;
 border-radius:15px;
 position:relative;
 top:40px;
-left:-150px;
+left:-205px;
 object-fit:contain;
 }
 
@@ -2206,6 +2206,20 @@ object-fit:contain;
   font-weight: 400;
   text-align: center;
   margin-top: 28px;
+}
+
+/* Tablet: prevent hero image overlap on smaller screens (13" laptops) */
+@media (max-width: 1366px) {
+  .hero-right {
+    width: 350px;
+    height: 450px;
+  }
+
+  .hero-right img {
+    height: 130%;
+    left: -140px;
+    top: 30px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -5593,17 +5607,17 @@ object-fit:contain;
   .hero-right {
     width: 100%;
     height: auto;
-    margin-top: -40px;
+    margin-top: -80px;
     overflow: visible;
   }
 
   .hero-right img {
-    position: static;
-    width: 85%;
+    position: relative;
+    width: 150%;
     height: auto;
     max-height: 340px;
     left: auto;
-    top: auto;
+    top: 15px;
     object-fit: contain;
     border-radius: 0;
     display: block;
