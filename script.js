@@ -650,3 +650,31 @@ function handleContactSubmit(form) {
     if (e.key === 'Escape') closeMenu();
   });
 })();
+
+/* ─────────────────────────────────────────────
+   Client Promise Button Navigation
+   ───────────────────────────────────────────── */
+(function() {
+  const clientPromiseButtons = document.querySelectorAll('.client-promise-btn');
+  clientPromiseButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      window.location.href = 'contact.html';
+    });
+  });
+
+  // Also handle the CTA button on index page
+  const ctaButton = document.querySelector('.cta');
+  if (ctaButton) {
+    ctaButton.addEventListener('click', function() {
+      window.location.href = 'contact.html';
+    });
+  }
+
+  // Handle the Learn More button
+  const learnMoreBtn = document.querySelector('.learn-more-btn');
+  if (learnMoreBtn) {
+    learnMoreBtn.addEventListener('click', function() {
+      window.location.href = 'ibrahim-awad.html';
+    });
+  }
+})();
