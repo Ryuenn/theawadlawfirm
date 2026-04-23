@@ -1822,6 +1822,10 @@ object-fit:contain;
 .faq-item{
   border-top: 1px solid rgba(140, 170, 210, 0.25);
 }
+/* Remove top border from the first FAQ item to eliminate the horizontal line */
+.faq-item:first-child{
+  border-top: none;
+}
 
 .faq-item:last-child{
   border-bottom: 1px solid rgba(140, 170, 210, 0.25);
@@ -6939,20 +6943,10 @@ object-fit:contain;
   align-items: start;
 }
 .tedx-speaker-img {
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 8px 36px rgba(91,159,216,0.14);
-  background: linear-gradient(135deg, #dce9f5, #c8dff0);
-  aspect-ratio: 3/4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.tedx-speaker-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  position: relative;
+  width: 300px;
+  height: 420px;
+  flex-shrink: 0;
 }
 .tedx-speaker-kicker {
   display: inline-block;
