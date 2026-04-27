@@ -742,6 +742,10 @@ object-fit:contain;
   margin-bottom: 40px;
 }
 
+.practice-header h2 .regular {
+  font-weight: 400;
+}
+
 .nav-controls {
   display: flex;
   justify-content: center;
