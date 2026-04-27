@@ -1768,6 +1768,13 @@ object-fit:contain;
   }
 }
 
+@media (max-width: 580px){
+  .team-title{
+    font-size: 24px;
+    white-space: nowrap;
+  }
+}
+
 /* ─────────────────────────────────────────────
    FAQ Section (After Team)
 ───────────────────────────────────────────── */
@@ -2048,6 +2055,10 @@ object-fit:contain;
   .te-grid .team-card {
     height: 260px;
   }
+  .te-group-label {
+    font-size: 32px;
+    white-space: nowrap;
+  }
 }
 
 @media (max-width: 480px) {
@@ -2057,6 +2068,10 @@ object-fit:contain;
   }
   .te-grid .team-card {
     height: 220px;
+  }
+  .te-group-label {
+    font-size: 28px;
+    white-space: nowrap;
   }
 }
 
@@ -3125,42 +3140,44 @@ object-fit:contain;
   }
 
   .faq-image-wrapper {
-    height: 350px;
+    height: 320px;
     position: relative;
+    margin: 0 auto 40px auto;
+    width: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 40px;
   }
 
   .faq-image-box {
-    width: 200px;
-    height: 300px;
-    top: auto;
-    left: auto;
+    width: 220px;
+    height: 290px;
+    top: 30px;
+    left: 50%;
     position: absolute;
-    z-index: 2;
-    margin: 0;
+    transform: translateX(-50%);
+    z-index: 1;
   }
 
   .faq-image-person {
-    width: 200px;
-    height: 300px;
-    top: auto;
-    left: auto;
+    width: 220px;
+    height: 290px;
+    top: 30px;
+    left: 50%;
     position: absolute;
+    transform: translateX(-50%);
     z-index: 3;
   }
 
   .faq-image-accent {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 180px;
-    height: 280px;
-    border-radius: 25px 40px 40px 25px;
-    z-index: 1;
+    top: 10px;
+    left: calc(50% - 5px);
+    width: 140px;
+    height: 310px;
+    transform: translateX(-50%) skewX(-10deg);
+    border-radius: 20px 40px 40px 20px;
+    z-index: 2;
   }
 
   .faq-card {
@@ -3896,8 +3913,8 @@ object-fit:contain;
   }
 
   .mission-vision-header {
-    padding: 0 40px;
-    margin-bottom: 60px;
+    padding: 0 24px;
+    margin-bottom: 40px;
   }
 
   .mission-vision-header h2 {
@@ -3906,15 +3923,13 @@ object-fit:contain;
 
   .mission-vision-container {
     gap: 20px;
-    padding: 0 40px;
-    grid-template-columns: 1fr 1fr;
+    padding: 0 24px;
+    grid-template-columns: 1fr;
     align-items: stretch;
-    grid-auto-rows: 1fr;
   }
 
   .mission-vision-card {
     padding: 30px;
-    height: 100%;
   }
 
   .purpose-card {
@@ -6626,6 +6641,13 @@ object-fit:contain;
   max-width: 600px;
   margin: 0 auto;
 }
+
+@media (max-width: 580px) {
+  .tedx-section-desc {
+    padding: 0 20px;
+    font-size: 15px;
+  }
+}
 .tedx-embed-caption {
   text-align: center;
   margin-top: 18px;
@@ -7146,5 +7168,22 @@ object-fit:contain;
   }
   .tedx-speaker-links {
     flex-direction: column;
+  }
+}
+/* FORCE single column on mobile */
+@media (max-width: 600px) {
+  .mission-vision-container {
+    grid-template-columns: 1fr !important;
+    display: grid !important;
+  }
+  .purpose-card,
+  .legacy-card {
+    grid-column: 1 !important;
+    margin: 0 !important;
+    align-self: auto !important;
+    text-align: left !important;
+  }
+  .legacy-card .card-label {
+    text-align: left !important;
   }
 }
