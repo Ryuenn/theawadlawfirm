@@ -70,8 +70,8 @@
   "thumbnailUrl": "https://www.awadlawfirm.com/assets/tedx.png",
   "uploadDate": "2024-01-01",
   "duration": "PT14M8S",
-  "embedUrl": "https://player.vimeo.com/video/1185526887",
-  "contentUrl": "https://vimeo.com/1185526887",
+  "embedUrl": "https://www.youtube.com/embed/JZURZPGzUvA",
+  "contentUrl": "https://www.youtube.com/watch?v=JZURZPGzUvA",
   "publisher": {
     "@type": "Organization",
     "name": "Awad Law Firm",
@@ -578,31 +578,47 @@
 
 <!-- TEDx thumbnail click-to-play -->
 <script>
-function tedxPlay() {
-  var thumb = document.getElementById('tedxThumb');
-  var frame = document.getElementById('tedxFrame');
-  var player = document.getElementById('tedxPlayer');
+(function () {
+  var tedxRevealScheduled = false;
 
-  // Fade out thumbnail
-  thumb.style.opacity = '0';
-  thumb.style.transform = 'scale(1.03)';
+  window.tedxPlay = function tedxPlay() {
+    var thumb = document.getElementById('tedxThumb');
+    var frame = document.getElementById('tedxFrame');
+    if (!thumb || !frame || tedxRevealScheduled) return;
+    tedxRevealScheduled = true;
+    thumb.style.pointerEvents = 'none';
 
-  setTimeout(function () {
-    thumb.style.display = 'none';
-    frame.innerHTML = '<iframe src="https://player.vimeo.com/video/1185526887?autoplay=1" title="Beautiful Patience \u2014 TEDx Talk by Attorney Ibrahim Awad" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
-    frame.style.opacity = '0';
+    frame.innerHTML = '<iframe src="https://www.youtube.com/embed/JZURZPGzUvA?autoplay=1&rel=0" title="Beautiful Patience \u2014 TEDx Talk by Attorney Ibrahim Awad" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
     frame.style.display = 'block';
-    requestAnimationFrame(function () {
-      frame.style.opacity = '1';
-    });
-  }, 280);
-}
+    frame.style.opacity = '1';
 
-// Keyboard support
-var thumb = document.getElementById('tedxThumb');
-if (thumb) {
-  thumb.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tedxPlay(); }
+    var ifr = frame.querySelector('iframe');
+    var revealed = false;
+
+    function reveal() {
+      if (revealed) return;
+      revealed = true;
+      thumb.style.display = 'none';
+    }
+
+    function scheduleReveal() {
+      setTimeout(reveal, 450);
+    }
+
+    if (ifr) {
+      ifr.addEventListener('load', scheduleReveal);
+    }
+    setTimeout(reveal, 6000);
+  };
+})();
+
+var tedxThumbEl = document.getElementById('tedxThumb');
+if (tedxThumbEl) {
+  tedxThumbEl.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      tedxPlay();
+    }
   });
 }
 </script>

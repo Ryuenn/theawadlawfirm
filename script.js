@@ -140,12 +140,13 @@ practiceButtons.forEach((btn, i) => {
   });
 });
 
-// Clicking a card selects the matching tab + recenters it
+// Center card: go to practice page. Side card: bring to center (then click again to open).
 cards.forEach((card, i) => {
   card.addEventListener('click', (e) => {
     e.stopPropagation();
-    if (card.dataset.href) {
-      window.location.href = card.dataset.href;
+    const href = card.dataset.href;
+    if (href && card.classList.contains('active-card')) {
+      window.location.href = href;
       return;
     }
     currentIndex = i;
@@ -670,9 +671,11 @@ function handleContactSubmit(form) {
     });
   }
 
-  // Handle the Learn More button
-  const learnMoreBtn = document.querySelector('.learn-more-btn');
-  if (learnMoreBtn) {
+  // Learn More on Firm History page → Ibrahim Awad; homepage uses <a href="about.html">.
+  const path = window.location.pathname.replace(/\\/g, '/');
+  const isAboutPage = /(^|\/)about\.html$/i.test(path);
+  const learnMoreBtn = document.querySelector('.origin-story .learn-more-btn');
+  if (learnMoreBtn && isAboutPage) {
     learnMoreBtn.addEventListener('click', function() {
       window.location.href = 'ibrahim-awad.html';
     });

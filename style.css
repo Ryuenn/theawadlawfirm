@@ -627,6 +627,7 @@ object-fit:contain;
 }
 
 .learn-more-btn {
+  display: inline-block;
   padding: 16px 40px;
   background: #7eaee5;
   color: white;
@@ -637,6 +638,8 @@ object-fit:contain;
   letter-spacing: 1px;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
 }
 
 .learn-more-btn:hover {
@@ -1733,6 +1736,16 @@ object-fit:contain;
   display: block;
 }
 
+/* Tighter crop in source — scale down; anchor to bottom so shoulders/suit meet the card edge like other photos */
+.team-photo img.team-photo-fit-looser{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 100%;
+  transform: scale(0.88);
+  transform-origin: 50% 100%;
+}
+
 .team-name{
   position: absolute;
   bottom: 22px;
@@ -1935,6 +1948,11 @@ object-fit:contain;
   gap: 10px;
   box-shadow: 0 14px 34px rgba(126,174,229,0.25);
   transition: transform 0.2s ease, background 0.2s ease;
+  text-decoration: none;
+}
+
+.faq-more:visited{
+  color: #fff;
 }
 
 .faq-more:hover{
@@ -6691,6 +6709,7 @@ object-fit:contain;
 .tedx-player-thumb {
   position: absolute;
   inset: 0;
+  z-index: 2;
   cursor: pointer;
   transition: opacity 0.28s ease, transform 0.28s ease;
 }
@@ -6798,6 +6817,7 @@ object-fit:contain;
   display: none;
   position: absolute;
   inset: 0;
+  z-index: 1;
   transition: opacity 0.3s ease;
 }
 .tedx-player-frame iframe {
