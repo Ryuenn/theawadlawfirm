@@ -1337,8 +1337,13 @@ object-fit:contain;
 .cs-thumb-overlay {
   position: absolute;
   inset: 0;
-  background: transparent;
+  background: linear-gradient(180deg, rgba(12, 26, 47, 0.04) 0%, rgba(12, 26, 47, 0.24) 100%);
   pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.cs-video-card:hover .cs-thumb-overlay {
+  opacity: 0.88;
 }
 
 /* Play button on video cards */
@@ -1354,20 +1359,61 @@ object-fit:contain;
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(13, 36, 66, 0.74);
   border: 2.5px solid rgba(255,255,255,0.85);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
   z-index: 10;
-  backdrop-filter: blur(2px);
+  color: #ffffff;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 14px 30px rgba(8, 22, 43, 0.38);
+}
+
+.cs-play-btn::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.42);
+  animation: csPlayPulse 1.8s ease-out infinite;
+}
+
+.cs-play-btn svg {
+  transform: translateX(1px);
+  transition: transform 0.25s ease;
 }
 
 .cs-video-card:hover .cs-play-btn {
-  transform: translate(-50%, -50%) scale(1.12);
-  background: rgba(0, 0, 0, 0.75);
+  transform: translate(-50%, -50%) scale(1.14);
+  background: rgba(18, 57, 98, 0.9);
+  box-shadow: 0 20px 42px rgba(8, 22, 43, 0.48);
+}
+
+.cs-video-card:hover .cs-play-btn svg {
+  transform: translateX(1px) scale(1.08);
+}
+
+.cs-play-btn:focus-visible {
+  outline: 3px solid rgba(126, 174, 229, 0.75);
+  outline-offset: 3px;
+}
+
+@keyframes csPlayPulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.72;
+  }
+  70% {
+    transform: scale(1.18);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.18);
+    opacity: 0;
+  }
 }
 
 /* YouTube Modal */

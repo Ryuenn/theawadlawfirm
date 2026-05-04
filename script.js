@@ -515,24 +515,6 @@ if (document.readyState === 'loading') {
 
     document.querySelectorAll('.cs-video-card').forEach(function(card) {
       var ytId = card.getAttribute('data-yt');
-      if (ytId && ytId !== '' && !ytId.startsWith('YOUTUBE_ID')) {
-        var img = card.querySelector('img');
-        if (img) {
-          var originalSrc = img.src;
-          var sizes = ['maxresdefault', 'sddefault', 'hqdefault', 'mqdefault'];
-          var sizeIdx = 0;
-          (function tryNext() {
-            if (sizeIdx >= sizes.length) { img.src = originalSrc; return; }
-            var t = new Image();
-            t.onload = function() {
-              if (t.naturalWidth > 120) { img.src = t.src; }
-              else { sizeIdx++; tryNext(); }
-            };
-            t.onerror = function() { sizeIdx++; tryNext(); };
-            t.src = 'https://img.youtube.com/vi/' + ytId + '/' + sizes[sizeIdx++] + '.jpg';
-          })();
-        }
-      }
       card.addEventListener('click', function() {
         var ytId = card.getAttribute('data-yt');
         if (ytId && ytId !== '' && !ytId.startsWith('YOUTUBE_ID')) openModal(ytId);
