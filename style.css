@@ -6449,6 +6449,10 @@ object-fit:contain;
   .edu-checklist-inner {
     flex-direction: column;
     text-align: center;
+    justify-content: flex-start;
+  }
+  .edu-checklist-text {
+    flex: 0 1 auto;
   }
   .edu-checklist-action {
     width: 100%;
@@ -6488,6 +6492,7 @@ object-fit:contain;
   }
   .edu-checklist-inner {
     padding: 0 22px;
+    gap: 14px;
   }
 }
 
